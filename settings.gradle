@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "App Cliente Vip V2"

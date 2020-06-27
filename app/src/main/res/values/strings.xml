@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">App Cliente Vip V2</string>
+    <string name="txtv_titulo">Aplicativo do Marcelo</string>
+    <string name="txtv_DataAtual">00/00/00</string>
+    <string name="txtv_HoraAtual">00:00:00</string>
+    <string name="btnCadastrar">Cadastrar novo usuário</string>
+
+    <!-- Activity Login -->
+    <string name="txtLogin">Login</string>
+    <string name="txtEmail">Email</string>
+    <string name="edtHintEmail">Digite o e-mail cadastrado</string>
+    <string name="txtSenha">Senha</string>
+    <string name="edtHintSenha">Digite sua senha de acesso</string>
+    <string name="ckLembrar">Lembrar</string>
+    <string name="txtRecuperarSenha">Recuperar Senha</string>
+    <string name="btnAcessar">Acessar</string>
+    <string name="btnSejaVip">Seja Vip</string>
+    <string name="txtVersaoApp">Versão V1.0</string>
+    <string name="txtLerPolitica"><![CDATA[Ler Política de Privacidade & Termos de Uso.]]></string>
+    <!-- ... -->
+
+    <!-- Activity formulario de Cadastro -->
+    <string name="txtCadastro">Cadastro</string>
+    <string name="txtv_Nome">Nome</string>
+    <string name="edtNome">Digite seu primeiro nome</string>
+    <string name="txtv_Email">Email</string>
+    <string name="edtEmail">Digite seu e-mail</string>
+    <string name="txtv_SenhaA">Senha</string>
+    <string name="edtSenhaA">Informe uma senha</string>
+    <string name="txtv_SenhaB">Repita seu senha</string>
+    <string name="edtSenhaB">Confirme a senha digitada</string>
+    <string name="ckTermo">Li e concordo com o termo de privacidade.</string>
+    <string name="btnCadastro">Cadastrar</string>
+    <!-- ... -->
+
+    <string name="AceitarTermo">"É necessario aceitar os termos de uso para continuar o cadastro..."</string>
+    <string name="SenhaNaoConferem">"As senhas digitadas não conferem..."</string>
+
+</resources>
