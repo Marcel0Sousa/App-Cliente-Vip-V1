@@ -22,7 +22,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private SharedPreferences preferences;
 
-    Cliente cliente;
+    Cliente clienteFake;
 
     TextView txtRecuperarSenha, txtLerPolitica;
     EditText edtEmail, edtSenha;
@@ -76,7 +76,10 @@ public class LoginActivity extends AppCompatActivity {
 
     private boolean validarDadosDoUsuario() {
 
-        return ClienteController.validarDadosDoCliente();
+        return ClienteController.validarDadosDoCliente(
+                clienteFake,
+                edtEmail.getText().toString(),
+                edtSenha.getText().toString());
 
     }
 
@@ -109,7 +112,7 @@ public class LoginActivity extends AppCompatActivity {
 
         isFormularioOK = false;
 
-        cliente = ClienteController.getClienteFake();
+        clienteFake = ClienteController.getClienteFake();
 
         restaurarSharePreferences();
     }
@@ -125,7 +128,7 @@ public class LoginActivity extends AppCompatActivity {
         SharedPreferences.Editor dados = preferences.edit();
 
         dados.putBoolean("loginAutomatico", isLembrarSenha);
-        dados.putString("loginAutomatico", edtEmail.getText().toString());
+        dados.putString("emailCliente", edtEmail.getText().toString());
         dados.apply();
 
     }

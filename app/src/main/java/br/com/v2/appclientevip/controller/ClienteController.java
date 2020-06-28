@@ -4,8 +4,8 @@ import br.com.v2.appclientevip.model.Cliente;
 
 public class ClienteController {
 
-    public static boolean validarDadosDoCliente() {
-        boolean retorno = false;
+    public static boolean validarDadosDoCliente(Cliente cliente, String email, String senha) {
+        boolean retorno = ((cliente.getEmail().equals(email) && cliente.getSenha().equals(senha)));
 
         return retorno;
     }
