@@ -3,6 +3,7 @@ package br.com.v2.appclientevip.view;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -13,10 +14,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import br.com.v2.appclientevip.R;
+import br.com.v2.appclientevip.api.AppUtil;
 import br.com.v2.appclientevip.controller.ClienteController;
 import br.com.v2.appclientevip.model.Cliente;
 
 public class LoginActivity extends AppCompatActivity {
+
+    private SharedPreferences preferences;
 
     Cliente cliente;
 
@@ -40,6 +44,9 @@ public class LoginActivity extends AppCompatActivity {
                 if (isFormularioOK = validarFormulario()) {
 
                     if (validarDadosDoUsuario()) {
+
+                        salvarSharePreferences();
+
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                         startActivity(intent);
                         finish();
@@ -101,9 +108,32 @@ public class LoginActivity extends AppCompatActivity {
         btnSejaVip = findViewById(R.id.btnSejaVip);
 
         isFormularioOK = false;
+
+        cliente = ClienteController.getClienteFake();
+
+        restaurarSharePreferences();
     }
 
     public void lembrarSenha(View view) {
         isLembrarSenha = ckLembrar.isChecked();
+
+    }
+
+    private void salvarSharePreferences() {
+
+        preferences = getSharedPreferences(AppUtil.PREF_APP, MODE_PRIVATE);
+        SharedPreferences.Editor dados = preferences.edit();
+
+        dados.putBoolean("loginAutomatico", isLembrarSenha);
+        dados.putString("loginAutomatico", edtEmail.getText().toString());
+        dados.apply();
+
+    }
+
+    private void restaurarSharePreferences() {
+
+        preferences = getSharedPreferences(AppUtil.PREF_APP, MODE_PRIVATE);
+        isLembrarSenha = preferences.getBoolean("loginAutomatico", false);
+        int teste = 0;
     }
 }
